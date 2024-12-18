@@ -141,4 +141,50 @@ class Roman_Number:
         elif type(num) == str:
            self.valor = to_arabigo(num)
            self.representation = num
+        else:
+           raise ValueError("Solo admitimos int or str")
+    
+    #metodo magico, transformar en cadena un objeto
+    def __str__(self):
+       return self.representation
+    
+    def __repr__(self):
+        return self.__str__()
 
+    # def __add__(self, other: object):
+    #    """
+    #    1. Validar el tipo de other
+    #    2. Realizar la suma
+    #    3. Devolver un romano con el valor suma
+    #    """
+    #    if not isinstance(other, self.__class__) and isinstance(other, int):
+    #       raise TypeError(f"'+' not supported between instances of 'Roman_Number' and '{other.__class__}'")
+    #    else:
+    #       return self.valor + other.valor
+        
+    
+    def __eq__(self, other:object):
+       if not isinstance(other, self.__class__):
+          return False
+       return self.valor == other.valor
+    
+    def __lt__(self, other:object)-> bool: #less than
+       pass
+
+    def __le__(self, other:object)-> bool: #less or equal
+       pass
+
+    def __gt__(self, other:object)-> bool: #greater than
+       pass
+
+    def __ge__(self, other:object)-> bool: #greater or equal
+       pass
+
+    def __lt__(self, other:object)-> bool: #less than
+       pass
+
+    def __ne__(self, other:object)-> bool: #not equal
+       pass
+       
+    def __hash__(self):
+       return hash(self.valor)

@@ -85,3 +85,35 @@ def test_constructor_entero_clase_Romana():
     rn = fromanos2.Roman_Number(8)
     assert rn.valor == 8
     assert rn.representation == "VIII"
+
+def test_str_romanos():
+    rn = fromanos2.Roman_Number(9)
+    assert str(rn) == "IX"
+
+def test_compara_iguales():
+    assert fromanos2.Roman_Number(18) == fromanos2.Roman_Number("XVIII")
+
+def test_compara_mayor():
+    pass
+
+def test_compara_menor():
+    pass
+
+def test_suma_romanos_con_romanos():
+    assert fromanos2.Roman_Number("X") + fromanos2.Roman_Number("V") == fromanos2.Roman_Number("XV")
+
+def test_suma_romanos_con_enteros():
+    assert fromanos2.Roman_Number("X") + fromanos2.Roman_Number(5) == fromanos2.Roman_Number("XV")
+
+def test_suma_enteros_con_enteros():
+    rn = fromanos2.Roman_Number(5)
+    on = fromanos2.Roman_Number(10)
+
+    assert rn + on == fromanos2.Roman_Number("XV")
+
+def test_suma_romanos_con_otra_cosa():
+    #TypeError
+    pass
+
+
+
